@@ -25,4 +25,5 @@ func _on_Button_pressed():
 	GlobalVars.cur_game_ver = $OptionButton.get_item_text($OptionButton.get_selected_id())
 	GlobalVars.cur_game_data = GlobalVars.game_vers[GlobalVars.cur_game_ver]
 	GlobalVars.player_count = $HSlider.value
+	GlobalVars.counters = $CountersCheckBox.pressed
 	GlobalVars.trash = get_tree().change_scene("res://Notepad.tscn")

@@ -40,6 +40,14 @@ anchor_bottom = 0.35
 grow_horizontal = 2
 text = "Game Variant"
 
+[node name="CountersCheckBox" type="CheckBox" parent="."]
+anchor_left = 0.1
+anchor_top = 0.4
+anchor_right = 0.9
+anchor_bottom = 0.45
+pressed = true
+text = "Counters"
+
 [node name="Button" type="Button" parent="."]
 anchor_top = 0.9
 anchor_right = 1.0

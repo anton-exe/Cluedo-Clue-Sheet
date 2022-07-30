@@ -8,7 +8,10 @@ var num: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	text = GlobalVars.mark_symbols[symbol] + "|" + GlobalVars.mark_nums[num]
+	var text_str: String = GlobalVars.mark_symbols[symbol]
+	if GlobalVars.counters:
+		text_str += "|" + GlobalVars.mark_nums[num]
+	text = text_str
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,4 +26,7 @@ func _on_Button_pressed():
 		if (num == 0 and GlobalVars.cur_symbol < 0) or (num == len(GlobalVars.mark_nums) and GlobalVars.cur_symbol > 0):
 			return
 		num += GlobalVars.cur_symbol
-	text = GlobalVars.mark_symbols[symbol] + "|" + GlobalVars.mark_nums[num]
+	var text_str: String = GlobalVars.mark_symbols[symbol]
+	if GlobalVars.counters:
+		text_str += "|" + GlobalVars.mark_nums[num]
+	text = text_str

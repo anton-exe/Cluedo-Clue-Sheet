@@ -25,6 +25,8 @@ var mark_nums = [
 	"9"  # 9
 ]
 
+var counters: bool = true
+
 var game_vers: Dictionary = {}
 
 var cur_game_ver: String = ""

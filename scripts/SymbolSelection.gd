@@ -13,11 +13,12 @@ func _ready():
 		symbol_button.get_child(0).symbol_index = i
 		symbol_button.size_flags_horizontal = SIZE_EXPAND_FILL
 		add_child(symbol_button)
-	for c in [-1, 1]:
-		var inc_button = preload("res://Increment Button.tscn").instance()
-		inc_button.get_child(0).change = c
-		inc_button.size_flags_horizontal = SIZE_EXPAND_FILL
-		add_child(inc_button)
+	if GlobalVars.counters:
+		for c in [-1, 1]:
+			var inc_button = preload("res://Increment Button.tscn").instance()
+			inc_button.get_child(0).change = c
+			inc_button.size_flags_horizontal = SIZE_EXPAND_FILL
+			add_child(inc_button)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

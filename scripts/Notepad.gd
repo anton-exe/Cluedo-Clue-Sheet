@@ -20,20 +20,20 @@ func _ready():
 		n.size_flags_horizontal = SIZE_EXPAND_FILL
 		n.size_flags_vertical = SIZE_EXPAND_FILL
 	for category in GlobalVars.cur_game_data:
-		for i in range(GlobalVars.player_count + 2):
+		for _i in range(GlobalVars.player_count + 2):
 			var seperator = HSeparator.new()
 			add_child(seperator)
 		for clue in category:
 			var clue_name = Label.new()
 			clue_name.text = clue
 			add_child(clue_name)
-			for i in range(GlobalVars.player_count + 1):
+			for _i in range(GlobalVars.player_count + 1):
 				var clue_slot = preload("res://Clue Slot.tscn").instance()
 				add_child(clue_slot)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if GlobalVars.cur_is_symbol:
 		$Curr_symbol.text = "Symbol: " + GlobalVars.mark_symbols[GlobalVars.cur_symbol]
 	else:
